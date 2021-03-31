@@ -1,0 +1,17 @@
+#foto {
+    width: 35px;
+    height: 35px;
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    border-radius: 70px;
+}
+
+.navbar {
+    background: #66bb6a;
+    color: #ffff;
+}
+
+.list-group-item {
+    background: #388e3c;
+    color: #ffff;
+}
