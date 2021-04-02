@@ -13,13 +13,13 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('/admin/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    
+
     <!-- Custom styles for this template-->
     <link href="{{asset('/admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="{{asset('/admin/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-    
+
 
 </head>
 
@@ -29,15 +29,15 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #1e7d32;">
+        <ul class="navbar-nav sidebar sidebar-dark accordion bg-dark" id="accordionSidebar" >
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <img src="/admin/img/ico.png" width="100%" height="100%" alt="">
                 </div>
                 <div class="sidebar-brand-text mx-3">
-                    Medicasist
+                    <img src="/admin/img/logo.png" width="100%" height="100%" alt="">
                 </div>
             </a>
 
@@ -184,7 +184,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand  topbar mb-4 static-top shadow" style="background: #1e7d32;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -198,7 +198,7 @@
 
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
                                 <img class="img-profile rounded-circle" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
                             </a>
                             <!-- Dropdown - User Information -->

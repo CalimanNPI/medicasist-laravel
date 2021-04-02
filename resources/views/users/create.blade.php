@@ -74,7 +74,7 @@
             <div id="registroDoctor" style="display:none;">
                 <div class="row">
                     <div class="col">
-                        <label for="cedula_No">Cedula</label>
+                        <label for="cedula_No">Cédula</label>
                         <input id="cedula_No" class="form-control" type="text" name="cedula_No" value="{{old('cedula_No')}}" />
                     </div>
                     <div class="col">
@@ -89,7 +89,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <label for="cedula_path">Cdula</label>
+                        <label for="cedula_path">Cédula</label>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="cedula_path" name="cedula_path" accept="image/jpeg,image/png" aria-describedby="inputGroupFileAddon04">
                             <label class="custom-file-label" for="cedula_path">Elija el archivo</label>

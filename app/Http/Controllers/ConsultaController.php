@@ -10,9 +10,13 @@ use App\Models\receta;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use DateTime;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use DomPDF\Options;
+use PhpParser\Node\Expr\New_;
 
 class ConsultaController extends Controller
 {
@@ -52,7 +56,7 @@ class ConsultaController extends Controller
             'enfermedades' => 'max:100',
             'observaciones' => 'max:250',
         ]);
- 
+
         //$pacientes = Persona::findOrFail($paciente_id);
         $data = $request->only(
             'peso',
@@ -175,7 +179,11 @@ class ConsultaController extends Controller
         /* $pdf = app('dompdf.wrapper');
         $pdf->loadHTML('<h1>Styde.net</h1>');
 
-        return $pdf->download('mi-archivo.pdf');*/
+        return $pdf->download('mi-archivo.pdf');
+
+        $options = new Options();
+        $options->set('isRemoteEnabled', TRUE);
+        $pdf = new Dompdf();*/
 
         $user = Persona::findOrFail($cita->paciente_id);
 
@@ -197,9 +205,17 @@ class ConsultaController extends Controller
             ->where('receta_folio', $receta[0]->folio)
             ->get();
 
-   
-        return PDF::loadView('vista-pdf', ['persona' => $user, 'medico' => $medico, 'cita' => $cita, 'receta' => $receta, 'medicamentos' => $medicamentos])
-            ->setPaper('a4', 'landscape')
+
+        $nacimiento = new DateTime($user->fecha_naci);
+        $ahora = new DateTime(date("Y-m-d"));
+        $diferencia = $ahora->diff($nacimiento);
+        $edad = $diferencia->format("%y");
+
+        $firma = '/storage/'.$medico[0]->descripcion;
+        $logo = '/admin/img/logo.png';
+
+        return PDF::loadView('vista-pdf', ['firma'=> $firma, 'logo'=> $logo,'persona' => $user, 'medico' => $medico, 'cita' => $cita, 'receta' => $receta, 'medicamentos' => $medicamentos, 'edad'=> $edad])
+            ->setPaper('LETTER', 'landscape')
             ->stream('archivo.pdf');
     }
 }
