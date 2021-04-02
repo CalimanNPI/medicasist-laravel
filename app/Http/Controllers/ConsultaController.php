@@ -217,5 +217,6 @@ class ConsultaController extends Controller
         return PDF::loadView('vista-pdf', ['firma'=> $firma, 'logo'=> $logo,'persona' => $user, 'medico' => $medico, 'cita' => $cita, 'receta' => $receta, 'medicamentos' => $medicamentos, 'edad'=> $edad])
             ->setPaper('LETTER', 'landscape')
             ->stream('archivo.pdf');
+            
     }
 }
