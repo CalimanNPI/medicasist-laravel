@@ -29,7 +29,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion bg-dark" id="accordionSidebar" >
+        <ul class="navbar-nav sidebar sidebar-dark accordion bg-primary" id="accordionSidebar" >
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
