@@ -92,20 +92,6 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route('citas.index')}}">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Citas</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('consulta.show') }}">
-                    <i class="fas fa-calendar-day"></i>
-                    <span>Mis Citas</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
                 <a class="nav-link" href="{{route('personas.index')}}">
                     <i class="fas fa-user-injured"></i>
                     <span>Pacientes</span></a>

@@ -116,7 +116,7 @@ class ConsultaController extends Controller
     {
         $user = Persona::findOrFail($cita->paciente_id);
         $medico = DB::table('medicos')
-            ->join('users', 'medicos.medico_id', '=', 'users.id')
+            ->join('users', 'medicos.user_id', '=', 'users.id')
             ->select(
                 'users.nombre',
                 'users.apellidoPaterno',
@@ -188,7 +188,7 @@ class ConsultaController extends Controller
         $user = Persona::findOrFail($cita->paciente_id);
 
         $medico = DB::table('medicos')
-            ->join('users', 'medicos.medico_id', '=', 'users.id')
+            ->join('users', 'medicos.user_id', '=', 'users.id')
             ->select(
                 'medicos.*',
                 'users.nombre',

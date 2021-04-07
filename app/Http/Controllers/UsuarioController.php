@@ -141,7 +141,6 @@ class UsuarioController extends Controller
             'apellidoPaterno' => 'required|max:255',
             'apellidoMaterno' => 'required|max:255',
             'cargo_ocupado' => 'required|max:255',
-            'tipo_usu' => 'required|max:255',
         ]);
 
         //$user = User::findOrFail($id);
@@ -153,7 +152,6 @@ class UsuarioController extends Controller
             'apellidoPaterno',
             'apellidoMaterno',
             'cargo_ocupado',
-            'tipo_usu'
         );
         $password = $request->input('password');
         if ($password)

@@ -32,7 +32,7 @@
                     <input type="text" class="form-control" id="motivo" name="motivo" required value="{{old('motivo')}}">
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col">
                     <label for="medico_id">Medicos</label>
