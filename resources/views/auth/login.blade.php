@@ -14,7 +14,7 @@
     <!-- Custom fonts for this template-->
     <link href="/admin/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="/admin/css/sb-admin-2.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <img class="" src="/admin/img/logo.png" width="100%" height="100%"  alt="Logo">
+                                        <img class="" src="/admin/img/logo.png" width="100%" height="100%" alt="Logo">
                                     </div>
                                     <br><br>
                                     <x-jet-validation-errors class="mb-4" />
@@ -70,7 +70,7 @@
                                     <hr>
                                     <div class="text-center">
 
-    
+
                                     </div>
                                     <div class="text-center">
                                     </div>

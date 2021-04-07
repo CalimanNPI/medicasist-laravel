@@ -436,7 +436,6 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('/admin/js/datatables-demo.js')}}"></script>
 
-    <script src="{{ mix('ja/app.js')}}"></script>
     <script>
         function contenido(sel) {
             if (sel.value == "1") {
