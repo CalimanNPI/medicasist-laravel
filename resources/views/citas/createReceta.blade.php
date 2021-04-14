@@ -45,8 +45,8 @@
         @csrf
         <div class="row">
           <div class="col">
-            <label for="diagnostico">Diagnostico</label>
-            <textarea class="form-control" id="diagnostico" name="diagnostico" rows="5" value="{{old('diagnostico')}}"></textarea>
+            <label for="diagnostico">Diagnóstico</label>
+            <textarea class="form-control" id="diagnostico" name="diagnostico" rows="5" value="{{old('diagnostico')}}">Mi Diagnóstico</textarea>
           </div>
         </div>
 
@@ -57,32 +57,6 @@
           </div>
         </div>
 
-
-        <hr>
-        <h3>Medicamentos</h3>
-        <hr>
-
-
-        <div class="row">
-          <div class="col">
-            <label for="medicamento">Medicamento</label>
-            <input type="text" class="form-control" id="medicamento" name="medicamento" value="{{old('medicamento')}}">
-          </div>
-          <div class="col">
-            <label for="indicaciones">Indicaciones</label>
-            <textarea class="form-control" id="indicaciones" name="indicaciones" rows="5" value="{{old('indicaciones')}}"></textarea>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-
-            <a class="btn btn-success mb-2" id="btn" name="btn">AGREGAR MEDICAMENTO</a>
-          </div>
-        </div>
-
-        <div id="app">
-
-        </div>
         <hr>
         <br>
 

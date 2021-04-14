@@ -147,17 +147,17 @@ class ConsultaController extends Controller
                 'observaciones',
             )
                 + ['fecha_expedido' =>  $now]
-                + ['fecha_vencimiento' =>  $now->add(8, 'day')]
+                + ['fecha_vencimiento' =>  $now->add(10, 'day')]
                 + ['cita_id' =>  $cita->cita_id]
         );
 
-        medicamento::create(
+       /* medicamento::create(
             $request->only(
                 'medicamento',
                 'indicaciones',
             )
                 + ['receta_folio' => $resetita->folio]
-        );
+        );*/
 
         return redirect()->route('consulta.show')->with('succses', 'Se registro la información correctamente');
         //return view('pdf', ['persona' => $user, 'medico' => $medico, 'cita' => $cita, 'receta' => $receta, 'medicamentos' => $medicamentos]);
@@ -201,9 +201,9 @@ class ConsultaController extends Controller
             ->where('cita_id', $cita->cita_id)
             ->get();
 
-        $medicamentos = DB::table('medicamentos')
+        /**$medicamentos = DB::table('medicamentos')
             ->where('receta_folio', $receta[0]->folio)
-            ->get();
+            ->get();*/
 
 
         $nacimiento = new DateTime($user->fecha_naci);
@@ -211,12 +211,11 @@ class ConsultaController extends Controller
         $diferencia = $ahora->diff($nacimiento);
         $edad = $diferencia->format("%y");
 
-        $firma = '/storage/'.$medico[0]->descripcion;
+        $firma = '/storage/' . $medico[0]->descripcion;
         $logo = '/admin/img/logo.png';
 
-        return PDF::loadView('vista-pdf', ['firma'=> $firma, 'logo'=> $logo,'persona' => $user, 'medico' => $medico, 'cita' => $cita, 'receta' => $receta, 'medicamentos' => $medicamentos, 'edad'=> $edad])
+        return PDF::loadView('vista-pdf', ['firma' => $firma, 'logo' => $logo, 'persona' => $user, 'medico' => $medico, 'cita' => $cita, 'receta' => $receta, 'edad' => $edad])
             ->setPaper('LETTER', 'landscape')
             ->stream('archivo.pdf');
-            
     }
 }

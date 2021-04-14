@@ -20,6 +20,18 @@
     <!-- Custom styles for this page -->
     <link href="{{asset('/admin/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#diagnostico',
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+            plugins: [
+                'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                'table emoticons template paste help'
+            ],
+        });
+    </script>
 
 </head>
 
@@ -29,7 +41,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion bg-primary" id="accordionSidebar" >
+        <ul class="navbar-nav sidebar sidebar-dark accordion bg-primary" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
