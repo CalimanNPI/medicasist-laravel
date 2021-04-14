@@ -38,7 +38,7 @@ class CitaController extends Controller
     {
 
         $medicos = DB::table('medicos')
-            ->join('users', 'medicos.medico_id', '=', 'users.id')
+            ->join('users', 'medicos.user_id', '=', 'users.id')
             ->select(
                 'medicos.*',
                 'users.nombre',
@@ -99,7 +99,7 @@ class CitaController extends Controller
         //$persona = DB::select('select * from personas where paciente_id = :paciente_id', ['paciente_id' => $cita->paciente_id]);
         $user = Persona::findOrFail($cita->paciente_id);
         $medico = DB::table('medicos')
-            ->join('users', 'medicos.medico_id', '=', 'users.id')
+            ->join('users', 'medicos.user_id', '=', 'users.id')
             ->select(
                 'users.nombre',
                 'users.apellidoPaterno',

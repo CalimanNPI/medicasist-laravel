@@ -132,19 +132,15 @@
 
         <p id="info_medicamento">
 
-        <ol>
-            @foreach($medicamentos as $medicamento)
-            <li><strong>Medicamento:</strong>{{$medicamento->medicamento}}
-                <ul>
-                    <li><strong>Indicación:</strong>{{$medicamento->indicaciones}}</li>
-                </ul>
-            </li>
-            @endforeach
-            <hr>
-        
-        </ol>
+            @foreach($receta as $rece)
 
+        <h2>Diagnóstico</h2>
+        {{$rece->diagnostico}}
 
+        <h2>Observación</h2>
+        {{$rece->observaciones}}
+        @endforeach
+        <hr>
         <hr>
         </p>
 

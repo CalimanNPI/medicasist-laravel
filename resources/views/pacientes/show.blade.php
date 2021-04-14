@@ -18,7 +18,11 @@
       <p>Peso: <strong>{{$persona->peso}}</strong></p>
       <p>Estatura: <strong>{{$persona->estatura}}</strong></p>
       <p>Temperatura: <strong>{{$persona->temperatura}}</strong></p>
+
+      @if(Auth::user()->tipo_usu == 1)
       <a href="{{route('personas.edit', ['persona' => $persona->paciente_id])}}" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i> EDITAR</a>
+      @endif
+      
     </div>
   </div>
 </div>

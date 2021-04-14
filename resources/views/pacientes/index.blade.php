@@ -50,8 +50,11 @@
                         <td>
                             @if(Auth::user()->tipo_usu == 3 || Auth::user()->tipo_usu == 1)
                             <a href="{{route('personas.show',['persona' => $persona->paciente_id])}}" class="btn btn-outline-success btn-sm"><i class="fas fa-info"></i></a>
-                            <a href="{{route('personas.edit',['persona' => $persona->paciente_id])}}" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></a>
                             <a href="{{route('citas.create',['persona' => $persona->paciente_id])}}" class="btn btn-outline-info btn-sm"><i class="far fa-calendar-plus"></i></a>
+                            @endif
+        
+                            @if(Auth::user()->tipo_usu == 1)
+                            <a href="{{route('personas.edit',['persona' => $persona->paciente_id])}}" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></a>
                             @endif
 
                             @if(Auth::user()->tipo_usu == 2 || Auth::user()->tipo_usu == 1)
